@@ -322,8 +322,8 @@ echo "Number of elements present in the array: " . $no_of_ele;
 $image = imagecreatetruecolor(200, 100);
 $background_color = imagecolorallocate($image, 255, 255, 255);
 imagefill($image, 0, 0, $background_color);
-imagepng($image, 'new_image.png')
-imagedestroy($image)
+header("Content-type: image/png"); 
+imagepng($image); 
 ?>
 ```
 
@@ -337,8 +337,8 @@ $polygon_color = imagecolorallocate($image, 0, 0, 255);
 imagefill($image, 0, 0, $background_color);
 $points = [50, 150, 150, 100, 50];
 imagepolygon($image, $points, 3, $polygon_color);
-imagepng($image, 'polygon.png');
-imagedestroy($image);
+header("Content-type: image/png"); 
+imagepng($image); 
 ?>
 ```
 
@@ -351,8 +351,8 @@ $background_color = imagecolorallocate($image, 255, 255, 255);
 $ellipse_color = imagecolorallocate($image, 0, 0, 255);
 imagefill($image, 0, 0, $background_color);
 imageellipse($image, 100, 100, 150, 100, $ellipse_color);
-imagepng($image, 'ellipse.png');
-imagedestroy($image);
+header("Content-type: image/png"); 
+imagepng($image); 
 ?>
 ```
 
